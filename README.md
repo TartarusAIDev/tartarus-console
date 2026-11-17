@@ -1,0 +1,60 @@
+# tartarus-console
+
+**The `tartarus` CLI: an uncensored AI coding agent in your terminal.**
+
+[![PyPI](https://img.shields.io/pypi/v/tartarus-console?style=flat-square&color=a3e635)](https://pypi.org/project/tartarus-console/)
+[![Python](https://img.shields.io/pypi/pyversions/tartarus-console?style=flat-square)](https://pypi.org/project/tartarus-console/)
+
+Tartarus runs in your terminal, reads and edits your files, runs commands, and
+ships code that other assistants refuse. It talks to the hosted Tartarus Coder
+model over an OpenAI-compatible API, so there is nothing to run locally and no
+GPU required.
+
+## Install
+
+```bash
+pip install tartarus-console
+```
+
+Requires Python 3.9+.
+
+## Log in
+
+Create an account at [dash.tartarusai.dev](https://dash.tartarusai.dev), open
+**Account to CLI access**, generate a token, then:
+
+```bash
+tartarus login
+```
+
+The CLI stores your token in `~/.tartarus/cli-token.json`.
+
+## Use
+
+```bash
+# one-shot
+tartarus "add a --json flag to this CLI and update the help text"
+
+# interactive session in the current repo
+tartarus
+
+# point at a specific directory
+tartarus --cwd ./service "write integration tests for the payments module"
+```
+
+## How it works
+
+Every request passes through the Tartarus backend, which enforces your plan and
+quota and forwards to the inference cluster. You never hold raw model
+credentials; your dashboard token is the only thing you manage.
+
+## Links
+
+- Website: https://tartarusai.dev
+- Dashboard: https://dash.tartarusai.dev
+- Examples: https://github.com/TartarusAIDev/tartarus-cookbook
+- API reference: https://dash.tartarusai.dev (API docs)
+
+## License
+
+MIT. See [LICENSE](LICENSE).
